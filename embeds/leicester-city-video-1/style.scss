@@ -1,0 +1,116 @@
+// Default breakpoints from Frontend
+$mq-breakpoints: (
+    mobile:          320px,
+    mobileLandscape: 480px,
+    phablet:         660px,
+    tablet:          740px,
+    desktop:         980px,
+    leftCol:         1140px,
+    wide:            1300px
+);
+
+//$c-background: #654c5b;
+$c-watchNow: #F5A623;
+$c-lightGrey: #dadada;
+$c-darkGray: #333333;
+$c-white: #ffffff;
+
+@import 'shared/_imports';
+
+.leicesters-journey__anchor{
+	top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: transparent;
+    position: absolute !important;
+    z-index: 2 !important;
+    cursor: pointer;
+}
+
+.leicestersjourney__wrapper{
+	background-image:url(@@assetPath@@/background.jpg);
+	background-position: center center no-repeat;
+	background-size:cover;
+	width:1300px;
+	height:280px;
+
+	@include mq($until: desktop) {
+        background-position-x: 32%;
+    }
+
+    @include mq(phablet, desktop) {
+        background-size: 145%;
+    }
+}
+
+.leicesters-journey__content{
+	color: white;
+    padding: 10px 20px;
+    height: 180px;
+    position: relative;
+    // background-color: rgba($c-darkGray,0.6);
+    background-color: $c-darkGray;
+
+    @include mq(phablet) {
+        height: 200px;
+        width: 100%;
+    }
+
+    @include mq(desktop) {
+        height: 380px;
+        width: 540px;
+        float:right;
+    }
+
+    @include mq(leftCol) {
+        height: 260px;
+    }
+}
+
+// Headline
+.leicesters-journey__headline{
+	font-size: 24px;
+    line-height: 22px;
+    color: $c-white;
+
+    @include mq($until: phablet) {
+        width: 60%;
+    }
+
+    @include mq(phablet) {
+        font-size: 48px;
+        line-height: 50px;
+    }
+
+    @include mq(desktop) {
+        font-size: 44px;
+        line-height: 48px;
+    }
+}
+
+.leicesters-journey__guardian-video-logo{
+	margin-left:-150px;
+	position:absolute;
+}
+
+// Buttons
+.leicestersjourney__buttons {
+    position: absolute;
+    bottom: 10px;
+}
+
+.button.leicestersjourney__button {
+    margin-left: -4px;
+    cursor: pointer;
+
+    @include mq(tablet) {
+        height: 26px !important;
+        width: 200px;
+        display: block;
+    }
+
+    
+}
+
+// Guardian Video Logo
