@@ -28,11 +28,14 @@ $c-white: #ffffff;
     cursor: pointer;
 }
 
-.leicestersjourney__wrapper{
+// Layout 
+
+.leicesters-journey__wrapper{
 	background-image:url(@@assetPath@@/background.jpg);
 	background-position: center center no-repeat;
 	background-size:cover;
-	width:1300px;
+    background-color: $c-darkGray;
+	width:1000px;
 	height:280px;
 
 	@include mq($until: desktop) {
@@ -45,32 +48,61 @@ $c-white: #ffffff;
 }
 
 .leicesters-journey__content{
-	color: white;
+    color: white;
     padding: 10px 20px;
     height: 180px;
     position: relative;
-    // background-color: rgba($c-darkGray,0.6);
     background-color: $c-darkGray;
+    z-index: 4;
+    width:100%;
+    opacity:0.6;
 
     @include mq(phablet) {
         height: 200px;
-        width: 100%;
     }
 
     @include mq(desktop) {
         height: 380px;
-        width: 540px;
-        float:right;
-    }
-
-    @include mq(leftCol) {
-        height: 260px;
+        width: 30%;
+        position:absolute;
+        right:0;
+        opacity:1;
     }
 }
 
+// Logos
+.leicesters-journey__logo-container{
+    width:400px;
+    height:100px;
+}
+
+.leicesters-journey__guardian-video-logo{
+    svg {
+        width:220px;
+        height:140px;
+    }
+
+    top:65px;
+    margin-left:30px;
+    position:absolute;
+}
+
+.guardianwatch__logo{
+    svg {
+        width: 150px;
+        height: 20px;
+        float: right;
+    }
+}
 // Headline
+.leicesters-journey__copy{
+    position:relative;
+    margin-top:45px;
+}
+
 .leicesters-journey__headline{
 	font-size: 24px;
+    font-family: 'Guardian Sans Web';
     line-height: 22px;
     color: $c-white;
 
@@ -84,33 +116,82 @@ $c-white: #ffffff;
     }
 
     @include mq(desktop) {
-        font-size: 44px;
-        line-height: 48px;
+        font-size: 38px;
+        line-height: 40px;
+        margin: -10px 0 5px;
     }
 }
 
-.leicesters-journey__guardian-video-logo{
-	margin-left:-150px;
-	position:absolute;
+.leicesters-journey__subheadline{
+    font-size: 18px;
+    font-family: 'Guardian Text Sans Web';
+    line-height: 22px;
+    color: $c-white;
+
+    @include mq($until: phablet) {
+        width: 60%;
+    }
+
+    @include mq(phablet) {
+        font-size: 36px;
+        line-height: 50px;
+    }
+
+    @include mq(desktop) {
+        font-size: 18px;
+        line-height: 20px;
+    }
 }
 
 // Buttons
-.leicestersjourney__buttons {
-    position: absolute;
-    bottom: 10px;
+.leicesters-journey__button {
+    svg {
+        width:15px;
+        height:10px;
+        padding-right:3px;
+    }
+    position: relative;
+    top:10px;
+    background-color: $c-watchNow;
+    color: $c-darkGray;
+    border:none;
 }
 
-.button.leicestersjourney__button {
-    margin-left: -4px;
+.button.leicesters-journey__button {
+    margin-left: -3px;
     cursor: pointer;
+    padding-top:4px;
 
     @include mq(tablet) {
-        height: 26px !important;
-        width: 200px;
+        height: 35px !important;
+        font-size: 1.1rem;
+        width: 150px;
         display: block;
+    }
+
+    &:hover{
+        background-color: darken($c-watchNow, 10%);
     }
 
     
 }
 
-// Guardian Video Logo
+// Video
+.leicesters-journey__video-overlay{
+    position:absolute;
+    width:900px;
+    height:400px;
+    background-color:$c-darkGray;
+    opacity: 0.3;
+}
+
+.leicesters-journey__video{
+    position:absolute;
+    width:900px;
+    margin-top:-100px;
+    display:none;
+
+    @include mq(desktop){
+        display:block;
+    }
+}
