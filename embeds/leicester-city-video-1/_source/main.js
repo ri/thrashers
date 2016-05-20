@@ -5,18 +5,17 @@
 //     document.getElementById("leicesters-journey__videoLoader").load();
 // }
 
-var lcfcVideoSrc = document.getElementById("leicesters-journey__videoLoader");
+var lcfcVideoSrc = document.getElementById("leicester__video--loader");
 
 function isScrolledIntoView(element) {
     var elementTop    = element.getBoundingClientRect().top,
         elementBottom = element.getBoundingClientRect().bottom;
 
     return elementTop < window.innerHeight && elementBottom >= 0;
-    console.log("words");
 }
 
 var lcfcVideo = function(){
-	if (isScrolledIntoView(document.getElementById("leicesters-journey__videoLoader"))) {
+	if (isScrolledIntoView(document.getElementById("leicester__video--loader"))) {
 		lcfcVideoSrc.play(0);
 	} else {
 		lcfcVideoSrc.pause(0);

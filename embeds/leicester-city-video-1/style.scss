@@ -9,129 +9,105 @@ $mq-breakpoints: (
     wide:            1300px
 );
 
-//$c-background: #654c5b;
 $c-watchNow: #F5A623;
 $c-lightGrey: #dadada;
-$c-darkGray: #333333;
+$c-darkGray: #333;
 $c-white: #ffffff;
 
 @import 'shared/_imports';
+@include base(leicester-city, darken($c-darkGray,2%));
 
-.leicesters-journey__anchor{
-	top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: transparent;
-    position: absolute !important;
-    z-index: 2 !important;
-    cursor: pointer;
-}
+// Layout
 
-// Layout 
-
-.leicesters-journey__wrapper{
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-	background-image:url(@@assetPath@@/background.jpg);
-	background-position: center center no-repeat;
-	background-size:cover;
-    background-color: $c-darkGray;
-    height:280px;
-    top:0;
-    margin:0;
-
-    @include mq(phablet){
+.leicester__video{
+    &--anchor{
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: transparent;
+        position: absolute !important;
+        z-index: 2 !important;
+        cursor: pointer;
     }
+    &--wrapper{
+      top: 0;
+    	background-image:url(@@assetPath@@/background.jpg);
+    	background-position: center center no-repeat;
+    	background-size:cover;
+        background-color: $c-darkGray;
+        height:280px;
+        top:0;
+        margin:0;
 
-	@include mq($until: desktop) {
-        background-position-x: 32%;
-    }
+            @include mq(phablet){
+            }
 
-    @include mq(desktop) {
-        height:300px;
-        //background-position-x: -32%;
-    }
-}
+        	@include mq($until: desktop) {
+                background-position-x: 32%;
+            }
 
-.leicesters-journey__content{
+            @include mq(desktop) {
+                height:300px;
+            }
+        }
+    &--right{
     color: white;
-    height: 180px;
+    height: 100%;
     z-index: 4;
 
-    @include mq(phablet) {
-        padding: 10px 20px;
-        height: 200px;
-        right:0;
-    }
+        @include mq(phablet) {
+            padding: 10px 20px;
+            right:0;
+        }
 
-    @include mq(desktop) {
-        padding: 10px 20px;
-        height: 380px;
-        width: 30%;
-        position:absolute;
-        background-color: $c-darkGray;
-        opacity:1;
+        @include mq(desktop) {
+            padding: 0 20px;
+            width: 30%;
+            position:absolute;
+            background-color: $c-darkGray;
+            opacity:1;
+        }
+    }
+    &--left{
+    position:absolute;
+    display:none;
+
+        @include mq(desktop){
+            width: 1100px;
+            margin: -115px -200px 0;
+            display:block;
+        }
     }
 }
 
 // Logos
-.leicesters-journey__guardian-video-logo{
-    position:absolute;
+.leicester__video--logo{
+    position:relative;
     z-index:2;
-    top:20px;
+    top:5px;
     svg{
-        width: 150px;
-        height: 80px;
+        width: 140px;
+        height: 20px;
     }
-    @include mq(phablet){
-    top:15px;
-    svg {   
-        margin-left: 20px;
-        }
-    }
+
     @include mq(desktop) {
         svg {
-            width:250px;
-            height:140px;
+            height:40px;
         }
-        top:70px;
-        margin-left:-10px;
     }
 }
 
-.guardianwatch__logo{
-    padding-top:5px;
-    svg {
-        width: 150px;
-        height: 20px;
-        float: right;
-    }
-}
-// Headline
-.leicesters-journey__copy{
-    padding-top:60px;
-    @include mq(phablet){
-        width:70%;
-        padding-top:40px;
-    }
-    @include mq(desktop){
-        padding-top:0;
-        position:relative;
-        padding:0;
-        margin-top:45px;
-    }
-}
+// Copy
 
-.leicesters-journey__headline{
+.leicester__video--headline{
 	width: 90%;
-    font-size: 24px;
-    line-height: 24px;
-    font-family: 'Guardian Sans Web';
-    color: $c-white;
-    margin:20px 0 5px;
+  font-size: 28px;
+  line-height: 30px;
+  font-family: 'Guardian Egyptian Web';
+  color: $c-white;
+  margin:10px 0 5px;
+  position: relative;
 
     @include mq(phablet) {
         width: 80%;
@@ -140,51 +116,51 @@ $c-white: #ffffff;
     }
 
     @include mq(desktop) {
-        width:120%;
+        width:100%;
         font-size: 38px;
         line-height: 40px;
-        margin: -10px 0 5px;
+        font-weight: 200;
     }
 }
 
-.leicesters-journey__subheadline{
+.leicester__video--subheadline{
     font-size: 18px;
     font-family: 'Guardian Text Sans Web';
     line-height: 20px;
     color: $c-white;
     width: 90%;
+    position: relative;
 
     @include mq(phablet) {
         width: 70%;
     }
     @include mq(desktop){
-        width:120%;
+        width: 100%;
     }
 }
 
 // Buttons
-.leicesters-journey__button {
+.leicester__video--button {
     svg {
         width:15px;
         height:10px;
         padding-right:3px;
     }
-    position: relative;
-    top:10px;
     background-color: $c-watchNow;
     color: $c-darkGray;
     border:none;
 }
 
-.button.leicesters-journey__button {
+.button.leicester__video--button {
+    position: absolute;
     margin-left: -3px;
     cursor: pointer;
     padding-top:4px;
+    bottom:30px;
 
     @include mq(tablet) {
         height: 35px !important;
         font-size: 1.1rem;
-        width: 150px;
         display: block;
     }
 
@@ -192,11 +168,11 @@ $c-white: #ffffff;
         background-color: darken($c-watchNow, 10%);
     }
 
-    
+
 }
 
 // Video
-.leicesters-journey__video-overlay{
+.leicester__video--overlay{
     display: none;
     @include mq(desktop){
         display: block;
@@ -206,16 +182,5 @@ $c-white: #ffffff;
         height:100%;
         background-color:$c-darkGray;
         opacity: 0.3;
-    }
-}
-
-.leicesters-journey__video{
-    position:absolute;
-    display:none;
-
-    @include mq(desktop){
-        width: 1100px;
-        margin: -115px -200px 0;
-        display:block;
     }
 }
