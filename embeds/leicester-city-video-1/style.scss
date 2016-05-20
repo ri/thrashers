@@ -18,7 +18,14 @@ $c-white: #ffffff;
 @include base(leicester-city, darken($c-darkGray,2%));
 
 // Layout
-
+.leicester-city-video-1__wrapper{
+    @include mq(mobile){
+      margin: 0 -10px 0;
+    }
+    @include mq(desktop){
+      margin: 0;
+    }
+}
 .leicester__video{
     &--anchor{
         top: 0;
@@ -35,26 +42,24 @@ $c-white: #ffffff;
     	background-image:url(@@assetPath@@/background.jpg);
     	background-position: center center no-repeat;
     	background-size:cover;
-        background-color: $c-darkGray;
-        height:280px;
-        top:0;
-        margin:0;
-
-            @include mq(phablet){
-            }
+      background-color: $c-darkGray;
+      height:280px;
+      overflow: visible;
 
         	@include mq($until: desktop) {
                 background-position-x: 32%;
-            }
+          }
 
-            @include mq(desktop) {
+          @include mq(desktop) {
+            overflow: hidden;
                 height:300px;
-            }
-        }
+          }
+      }
     &--right{
     color: white;
     height: 100%;
     z-index: 4;
+    padding: 10px;
 
         @include mq(phablet) {
             padding: 10px 20px;
@@ -110,7 +115,7 @@ $c-white: #ffffff;
   position: relative;
 
     @include mq(phablet) {
-        width: 80%;
+        width: 75%;
         font-size: 34px;
         line-height: 32px;
     }
