@@ -9,13 +9,13 @@ $mq-breakpoints: (
     wide:            1300px
 );
 
-$c-watchNow: #F5A623;
+$c-watchNow: #fb0;
 $c-lightGrey: #dadada;
-$c-darkGray: #333;
+$c-darkGray: #161616;
 $c-white: #ffffff;
 
 @import 'shared/_imports';
-@include base(leicester-city, darken($c-darkGray,2%));
+@include base(leicester-city, darken($c-darkGray,10%));
 
 // Layout
 .leicester-city-video-1__wrapper{
@@ -111,7 +111,7 @@ $c-white: #ffffff;
   line-height: 30px;
   font-family: 'Guardian Egyptian Web';
   color: $c-white;
-  margin:10px 0 5px;
+  margin:0 0 8px;
   position: relative;
 
     @include mq(phablet) {
@@ -125,6 +125,7 @@ $c-white: #ffffff;
         font-size: 38px;
         line-height: 40px;
         font-weight: 200;
+        margin:-8px 0 8px;
     }
 }
 
@@ -182,6 +183,8 @@ $c-white: #ffffff;
     @include mq(desktop){
         display: block;
         position:absolute;
+        margin-left:-100px;
+        overflow: visible;
         z-index:1;
         width:100%;
         height:100%;
