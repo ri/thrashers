@@ -68,17 +68,25 @@ $c-white: #ffffff;
 
         @include mq(desktop) {
             padding: 0 20px;
-            width: 30%;
+            width:30%;
             position:absolute;
             background-color: $c-darkGray;
             opacity:1;
+        }
+
+        @include mq(leftCol) {
+          width:26%;
+        }
+
+        @include mq(wide) {
+          width:29%;
         }
     }
     &--left{
     position:absolute;
     display:none;
 
-        @include mq(desktop){
+        @include mq(desktop) {
             width: 1100px;
             margin: -115px -200px 0;
             display:block;
@@ -121,7 +129,7 @@ $c-white: #ffffff;
     }
 
     @include mq(desktop) {
-        width:100%;
+        width:90%;
         font-size: 38px;
         line-height: 40px;
         font-weight: 200;
@@ -140,8 +148,8 @@ $c-white: #ffffff;
     @include mq(phablet) {
         width: 70%;
     }
-    @include mq(desktop){
-        width: 100%;
+    @include mq(desktop) {
+        width: 85%;
     }
 }
 
