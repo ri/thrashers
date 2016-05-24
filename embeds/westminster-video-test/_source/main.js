@@ -20,6 +20,10 @@ function loadJSON(path, success, error)
 
 var WestminsterVideoSrc = document.getElementById("westminster__video--loader");
 
+loadJSON("http://interactive.guim.co.uk/docsdata-test/1g-nqRQPtxr70cnfyttZSrPJiSkiSgVNam9J53drsZ2g.json", function(data) {
+  document.getElementsByClassName('westminster__video--headline')[0].innerHTML = data.sheets.Sheet1[0].Title;
+  WestminsterVideoSrc.innerHTML = data.sheets.Sheet1[0].Video;
+});
 
 function isScrolledIntoView(element) {
       var elementTop = element.getBoundingClientRect().top,
@@ -30,10 +34,7 @@ function isScrolledIntoView(element) {
 
 var WestminsterVideo = function(){
 	if (isScrolledIntoView(document.getElementById("westminster__video--loader"))) {
-      loadJSON("http://interactive.guim.co.uk/docsdata-test/1g-nqRQPtxr70cnfyttZSrPJiSkiSgVNam9J53drsZ2g.json", function(data) {
-        WestminsterVideoSrc.innerHTML = data.sheets.Sheet1[0].Content;
         WestminsterVideoSrc.play(0);
-      })
 	} else {
 		    WestminsterVideoSrc.pause(0);
 	     }
