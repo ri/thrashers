@@ -11,7 +11,7 @@ $mq-breakpoints: (
 
 @import 'shared/_imports';
 
-$c-background: #e3e3e3;
+$c-background: #AAD8F1;
 
 @mixin backgroundimage($background, $url, $size){
     background: $background;
@@ -21,16 +21,7 @@ $c-background: #e3e3e3;
 
 @include base(membership-july-16, $c-background);
 
-/*.membership-july-16--wrapper{
-    width: 100%;
-
-    @include mq($until: phablet){
-            overflow: visible;
-        }
-}*/
-
-
-.membership-july-16--wrapper {
+.membership-july-16__wrapper {
     @include backgroundimage(no-repeat, url('@@assetPath@@/texture.png'), cover); 
     background-position: center;
     font-family: $f-serif-headline;
@@ -51,6 +42,100 @@ $c-background: #e3e3e3;
 
     @include mq($until: mobileLandscape){
         height: 88px;
+    }
+
+    .membership-july-16__quote-mark {
+    	width: 110px;
+    	position: absolute;
+    	top:15px;
+    	left:30px;
+    }
+
+
+    h1 {
+    	display: block;
+    	font-family: $f-serif-headline;
+    	color: #fff;
+    	font-size: 1.9rem;
+	    line-height: 2.3rem;
+    }
+
+    .quote {
+    	margin: 100px 0 0 30px;
+    	width: 650px;
+    }
+
+    .name {
+    	font-weight: 100;
+    	margin: 10px 0 0 30px;	
+    }
+
+    .membership-july-16__cta{
+    	display: inline-block;
+	    padding: 5px 16px;
+	    border: .6px solid #fff;
+	    border-radius: 100px;
+	    margin: 15px 0 0 30px;
+
+    	p {
+    		font-family: Guardian Text Sans Web;
+    		font-weight: 600;
+    		color: white;
+    		font-size: 15px;
+    		display: inline-block;
+    		vertical-align: middle;
+		    margin: 0;
+    	}
+
+    	.cta-arrow {
+    		display: inline-block;
+    		width: 24px;
+    		margin-left: 5px;
+    		vertical-align: middle;
+
+    	}
+    }
+
+    .membership-july-16__cta:hover {
+    	background-color: #BB3A7F;
+    	border: .6px solid #BB3A7F;
+    }
+
+    .membership-july-16__cta:hover p {
+    	color: #fff;
+    }
+
+    .membership-july-16__cta:hover #arrow-color {
+    	fill: #fff;
+    }
+
+    .membership-july-16__logo {
+    	position: absolute;
+    	bottom:10px;
+    	right:305px;
+    	width:130px;
+    	z-index: 9;
+    }
+
+    .membership-july-16__figure {
+    	position: absolute;
+    	bottom: 0;
+    	right:0px;
+    	width:375px;
+    	z-index: 9;
+    }
+
+    .membership-july-16__g-logo {
+    	position: absolute;
+    	top: 15px;
+    	right:15px;
+    }
+
+    .membership-july-16__blocks {
+    	position: absolute;
+    	bottom: 0;
+    	right:0;
+    	z-index: 1;
     }
 
 }
