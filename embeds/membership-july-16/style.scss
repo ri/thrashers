@@ -21,12 +21,16 @@ $c-background: #AAD8F1;
 
 @include base(membership-july-16, $c-background);
 
+section#membership-july-16 a.fc-trail__count{
+  display: none !important;
+}
+
 .membership-july-16__wrapper {
     @include backgroundimage(no-repeat, url('@@assetPath@@/texture.png'), cover); 
     background-position: center;
     font-family: $f-serif-headline;
     width: 1300px;
-    height: 350px; 
+    height: 300px; 
 
     @include mq($until: desktop){
         height: 280px;
@@ -45,7 +49,7 @@ $c-background: #AAD8F1;
     }
 
     .membership-july-16__quote-mark {
-    	width: 110px;
+    	width: 90px;
     	position: absolute;
     	top:15px;
     	left:30px;
@@ -78,6 +82,11 @@ $c-background: #AAD8F1;
             }
             
             @include mq($until: desktop){
+                font-size: 1.4rem;
+			    line-height: 1.8rem;
+            }
+
+            @include mq($until: phablet){
                 font-size: 1.2rem;
 			    line-height: 1.6rem;
             }
@@ -85,7 +94,7 @@ $c-background: #AAD8F1;
     }
 
     .quote {
-    	margin: 100px 0 0 30px;
+    	margin: 78px 0 0 30px;
     	width: 650px;
 
 	    	@include mq($until: leftCol){
@@ -109,7 +118,7 @@ $c-background: #AAD8F1;
 
     .name {
     	font-weight: 100;
-    	margin: 10px 0 0 30px;
+    	margin: 2px 0 0 30px;
 
     	 @include mq($until: desktop){
                 margin-top: 5px;
@@ -137,7 +146,10 @@ $c-background: #AAD8F1;
 
             @include mq($until: mobileLandscape){
             	margin-top: 10px;
-               
+            }
+
+            @include mq($until: mobile){
+            	margin-top: 20px;
             }
 
     	p {
@@ -220,8 +232,8 @@ $c-background: #AAD8F1;
 
     .membership-july-16__g-logo {
     	position: absolute;
-    	top: 15px;
-    	right:15px;
+    	top: 10px;
+    	right:10px;
 
 	    	@include mq($until: phablet){
 				top: 10px;
